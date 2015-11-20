@@ -1,9 +1,6 @@
 package org.w3concept.dbstorage.common;
 
 import java.io.IOException;
-import java.sql.Timestamp;
-
-import org.joda.convert.StringConvert;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
