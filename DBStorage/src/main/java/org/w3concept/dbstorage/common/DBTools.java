@@ -58,6 +58,10 @@ public class DBTools {
 		return new DBColumn(p_row, p_meta, value);
 	}
 	
+	/**
+	 * Close the statement (skip all exception)
+	 * @param p_stmt
+	 */
 	public static void closeStatement(Statement p_stmt)
 	{
 		if(p_stmt == null)
@@ -71,6 +75,10 @@ public class DBTools {
 		}
 	}
 
+	/**
+	 * Close the result set (skip all exception)
+	 * @param p_set
+	 */
 	public static void closeResultSet(ResultSet p_set)
 	{
 		if(p_set == null)
