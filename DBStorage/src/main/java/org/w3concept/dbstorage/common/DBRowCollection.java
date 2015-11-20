@@ -88,10 +88,28 @@ public class DBRowCollection {
 		return importRow(null);
 	}
 	
+	/**
+	 * Get the meta data defintion of the collection
+	 * @return
+	 */
 	public DBMetaDataSet getMetaData()
 	{
 		return _MetaData;
-	}	
+	}
+	
+	/**
+	 * Clear the object (become unusable). Done to help the garbage collector
+	 */
+	public void clear()
+	{
+		for(DBRow row : _Rows)
+			row.clear();
+		
+		_Rows.clear();
+		_Rows = null;
+		
+		_MetaData = null;
+	}
 	
 	/**
 	 * Fill the  row collection with the dbresultset. 

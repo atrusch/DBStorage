@@ -178,4 +178,17 @@ public class DBRow {
 	{
 		return _RowData.toString();
 	}
+	
+	/**
+	 * Clear the row (become unusable). Done to help the garbage collector
+	 */
+	public void clear()
+	{
+		for(DBColumn col : _RowData.values())
+			col.clear();
+			
+		_MetaData = null;
+		_Parent = null;
+		_Status = DBRowStatus.Unchanged;
+	}
 }

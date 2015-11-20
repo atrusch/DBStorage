@@ -24,6 +24,12 @@ public class DBColumn {
 	{
 	}
 	
+	/**
+	 * Create a new column 
+	 * @param p_row DBrow of this column
+	 * @param p_metaData Meta data definition
+	 * @param p_value Value of the column
+	 */
 	protected DBColumn(DBRow p_row, DBColumnMetaData p_metaData, Object p_value) 
 	{
 		_MetaData = p_metaData;
@@ -107,5 +113,18 @@ public class DBColumn {
 			return _Value.toString();
 		
 		return "<null>";
+	}
+	
+	/**
+	 * Clear the column (become unusable). Done to help the garbage collector
+	 */
+	public void clear()
+	{
+		_OldValue = null;
+		_Value = null;
+		_Row = null;
+		_MetaData = null;
+
+		_IsDirty = false;
 	}
 }

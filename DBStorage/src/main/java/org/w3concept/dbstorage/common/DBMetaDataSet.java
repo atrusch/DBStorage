@@ -102,10 +102,13 @@ public class DBMetaDataSet {
 	}
 	
 	/**
-	 * Clear the set
+	 * Clear the set (object become unusable). Done to help the garbage collector
 	 */
 	public void clear() {
 		_Keys.clear();
 		_MetaData.clear();
+		
+		_Keys = null;
+		_MetaData = null;
 	}
 }
